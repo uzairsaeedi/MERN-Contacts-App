@@ -62,3 +62,62 @@ npm run dev
 Frontend usually runs on http://localhost:5173
 
 Backend runs on http://localhost:8080 || 8000
+
+**🧠 API Endpoints**
+Method	Endpoint	Description
+POST	/api/users/register	Register a new user
+POST	/api/users/login	Log in a user and return JWT
+GET	/api/users/current	Get current logged-in user
+GET	/api/contacts/getAll	Fetch all user’s contacts
+GET	/api/contacts/ById/:id	Fetch contact by Id
+POST	/api/contacts/createContact	Add new contact
+PUT	/api/contacts/update/:id	Update existing contact
+DELETE	/api/contacts/delete/:id	Delete contact
+
+**🧑‍💻 Usage Flow**
+
+Register a new account.
+
+Log in using your credentials.
+
+Access your dashboard to manage contacts.
+
+Add, edit, or delete contacts — they’re saved privately to your account.
+
+**🛠️ Folder Structure**
+
+mern-contacts-app/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   ├── constants.js
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .env
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+└── README.md
+
+**🤝 Contributing**
+
+Pull requests are welcome!
+If you find a bug or have an idea to improve this project, feel free to fork and submit a PR.
+
+**🧑‍🏫 Author**
+
+Muhammad Uzair Saeedi
+📧 uzairsaeedi627@gmail.com
+💼 https://www.linkedin.com/in/muhammad-uzair-saeedi/
+🐙 https://github.com/uzairsaeedi
+
+**🏁 License**
+
+This project is licensed under the MIT License.
