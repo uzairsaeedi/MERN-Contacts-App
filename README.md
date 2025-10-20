@@ -84,28 +84,6 @@ Access your dashboard to manage contacts.
 
 Add, edit, or delete contacts — they’re saved privately to your account.
 
-## 🛠️ Folder Structure
-
-mern-contacts-app/
-│
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── server.js
-│   ├── constants.js
-│   ├── package.json
-│   ├── package-lock.json
-│   └── .env
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
-└── README.md
-
 ## 🤝 Contributing
 
 Pull requests are welcome!
@@ -121,4 +99,5 @@ Muhammad Uzair Saeedi
 ## 🏁 License
 
 This project is licensed under the MIT License.
+
 
