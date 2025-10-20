@@ -63,7 +63,7 @@ Frontend usually runs on http://localhost:5173
 
 Backend runs on http://localhost:8080 || 8000
 
-**🧠 API Endpoints**
+## 🧠 API Endpoints
 Method	Endpoint	Description
 POST	/api/users/register	Register a new user
 POST	/api/users/login	Log in a user and return JWT
@@ -74,7 +74,7 @@ POST	/api/contacts/createContact	Add new contact
 PUT	/api/contacts/update/:id	Update existing contact
 DELETE	/api/contacts/delete/:id	Delete contact
 
-**🧑‍💻 Usage Flow**
+## 🧑‍💻 Usage Flow
 
 Register a new account.
 
@@ -84,7 +84,7 @@ Access your dashboard to manage contacts.
 
 Add, edit, or delete contacts — they’re saved privately to your account.
 
-**🛠️ Folder Structure**
+## 🛠️ Folder Structure
 
 mern-contacts-app/
 │
@@ -106,18 +106,19 @@ mern-contacts-app/
 │
 └── README.md
 
-**🤝 Contributing**
+## 🤝 Contributing
 
 Pull requests are welcome!
 If you find a bug or have an idea to improve this project, feel free to fork and submit a PR.
 
-**🧑‍🏫 Author**
+## 🧑‍🏫 Author
 
 Muhammad Uzair Saeedi
 📧 uzairsaeedi627@gmail.com
 💼 https://www.linkedin.com/in/muhammad-uzair-saeedi/
 🐙 https://github.com/uzairsaeedi
 
-**🏁 License**
+## 🏁 License
 
 This project is licensed under the MIT License.
+
