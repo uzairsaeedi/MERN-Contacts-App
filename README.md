@@ -1,103 +1,119 @@
-A full-stack **Contact Management System** built with the **MERN Stack (MongoDB, Express.js, React, Node.js)**.  
+# 📇 MERN Contacts App (with Docker Support)
+
+A full-stack **Contact Management System** built using the **MERN Stack (MongoDB, Express.js, React, Node.js)** — now fully **Dockerized** 🐳!  
+
 This app allows users to **register, log in, and manage their personal contact lists securely** using **JWT-based authentication**.  
 Each user has their **own separate contacts**, ensuring privacy and data isolation 🔒.
 
+---
+
 ## 🚀 Features
 
-- 🔐 **JWT Authentication** — Secure login and registration system.  
-- 👤 **User-specific Contacts** — Each user can only view and manage their own contacts.  
-- ➕ **CRUD Operations** — Add, view, edit, and delete contacts easily.  
-- ⚡ **MERN Stack** — MongoDB, Express.js, React, and Node.js integrated seamlessly.  
-- 🧭 **Protected Routes** — Only authenticated users can access dashboard and contacts.  
-- 🎨 **Modern UI** — Clean and responsive design built with React and CSS.  
+- 🔐 **JWT Authentication** — Secure login and registration system  
+- 👤 **User-specific Contacts** — Each user manages only their own contacts  
+- 🧾 **CRUD Operations** — Add, view, update, and delete contacts  
+- 🧭 **Protected Routes** — Accessible only to logged-in users  
+- 🎨 **Modern UI** — Clean, responsive React frontend  
+- 🐳 **Dockerized Setup** — Run the entire stack (frontend, backend, and MongoDB) using Docker Compose  
+
+---
 
 ## 🧩 Tech Stack
 
-**Frontend:**
+**Frontend:**  
 - React.js ⚛️  
 - React Router  
 - Axios  
 - Toast Notifications  
 
-**Backend:**
+**Backend:**  
 - Node.js  
 - Express.js  
 - MongoDB + Mongoose  
 - JSON Web Tokens (JWT)  
-- bcrypt.js (for password hashing)  
+- bcrypt.js  
 
-## ⚙️ Installation & Setup
+**DevOps:**  
+- Docker 🐳  
+- Docker Compose  
 
-Follow these steps to run the project locally 👇
+---
 
-### 1️⃣ Clone the repository
+## ⚙️ Installation & Setup (with Docker)
 
+### 🧱 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/uzairsaeedi/MERN-Contacts-App.git
-```
-**Navigate into the project folder:**
 cd MERN-Contacts-App
+```
 
-**Install dependencies:**
-# Install backend dependencies
-cd backend
-npm install
+### ⚙️ 2️⃣ Create a `.env` file inside the backend folder
 
-# Install frontend dependencies
-cd ../frontend
-npm install
-
-**Create a .env file inside your backend folder and add:**
+```bash
 PORT=8080
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://mongo:27017/contacts_db
 JWT_SECRET=your_secret_key
+```
 
-**Run the Development Servers:**
-# Run backend (from backend folder)
-npm start
+### 🐳 3️⃣ Build and run using Docker Compose
+Make sure Docker Desktop is running, then run:
+```bash
+docker compose up --build
+```
 
-# Run frontend (from frontend folder)
-npm run dev
+This command will:
+- Spin up **MongoDB** container  
+- Start **backend** Node.js server on port `8080`  
+- Launch **frontend** React app on port `5173`
 
-Frontend usually runs on http://localhost:5173
+---
 
-Backend runs on http://localhost:8080 || 8000
+### 🌐 Access the app:
+- **Frontend:** [http://localhost:5173](http://localhost:5173)  
+- **Backend API:** [http://localhost:8080/api](http://localhost:8080/api)  
+- **MongoDB:** Runs inside Docker container named `mongo`
+
+---
 
 ## 🧠 API Endpoints
-Method	Endpoint	Description
-POST	/api/users/register	Register a new user
-POST	/api/users/login	Log in a user and return JWT
-GET	/api/users/current	Get current logged-in user
-GET	/api/contacts/getAll	Fetch all user’s contacts
-GET	/api/contacts/ById/:id	Fetch contact by Id
-POST	/api/contacts/createContact	Add new contact
-PUT	/api/contacts/update/:id	Update existing contact
-DELETE	/api/contacts/delete/:id	Delete contact
+
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| POST | `/api/users/register` | Register a new user |
+| POST | `/api/users/login` | Log in a user and return JWT |
+| GET | `/api/users/current` | Get current logged-in user |
+| GET | `/api/contacts/getAll` | Fetch all user’s contacts |
+| GET | `/api/contacts/ById/:id` | Fetch a contact by ID |
+| POST | `/api/contacts/createContact` | Add a new contact |
+| PUT | `/api/contacts/update/:id` | Update a contact |
+| DELETE | `/api/contacts/delete/:id` | Delete a contact |
+
+---
 
 ## 🧑‍💻 Usage Flow
 
-Register a new account.
+1️⃣ Register a new account  
+2️⃣ Log in using your credentials  
+3️⃣ Manage your contacts (add, update, or delete)  
+4️⃣ Each contact list is private to your user  
 
-Log in using your credentials.
-
-Access your dashboard to manage contacts.
-
-Add, edit, or delete contacts — they’re saved privately to your account.
+---
 
 ## 🤝 Contributing
 
-Pull requests are welcome!
-If you find a bug or have an idea to improve this project, feel free to fork and submit a PR.
+Pull requests are welcome!  
+If you find a bug or have ideas to improve this project, fork the repo and open a PR 🚀
 
-## 🧑‍🏫 Author
+---
 
-Muhammad Uzair Saeedi
-📧 uzairsaeedi627@gmail.com
-💼 https://www.linkedin.com/in/muhammad-uzair-saeedi/
-🐙 https://github.com/uzairsaeedi
+## 👨‍💻 Author
+
+**Muhammad Uzair Saeedi**  
+📧 uzairsaeedi627@gmail.com  
+💼 [LinkedIn](https://www.linkedin.com/in/muhammad-uzair-saeedi/)  
+🐙 [GitHub](https://github.com/uzairsaeedi)
+
+---
 
 ## 🏁 License
-
-This project is licensed under the MIT License.
-
-
+This project is licensed under the **MIT License**.
