@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo '📥 Cloning repository...'
-                git branch: 'main', url: 'https://github.com/uzairsaeedi/MERN-Contacts-App.git'
+                git branch: 'main', url: 'https://github.com/uzairsaeedi/MERN-Contacts-App'
             }
         }
 
