@@ -20,8 +20,8 @@ pipeline {
                 echo '🧾 Creating .env file for backend...'
                 writeFile file: 'backend/.env', text: '''
         PORT=8080
-        MONGO_URI=mongodb://mongo:27017/contacts_db
-        JWT_SECRET=your_jwt_secret_here
+        MONGO_URI=mongodb://mongo:27017/mycontacts-backend
+        JWT_SECRET=uzair123
         '''
             }
         }
