@@ -63,7 +63,7 @@ const loginUser = asyncHandler(async (req, res) => {
                     id: user.id
                 },
             },
-            process.env.ACCESS_TOKEN_SECRET,
+            process.env.JWT_SECRET,
             { expiresIn: "30m" }
         );
         res.status(200).json({ accessToken });
