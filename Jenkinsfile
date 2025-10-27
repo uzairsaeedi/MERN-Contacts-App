@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials') // Jenkins credentials ID
+        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
         DOCKERHUB_REPO = 'uzairsaeedi/my-contacts-app'
+        ENV_FILE = 'backend/.env'
     }
 
     stages {
