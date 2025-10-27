@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo '🐳 Building Docker images...'
-                sh 'docker compose build'
+                bat 'docker compose build'
             }
         }
 
@@ -25,14 +25,14 @@ pipeline {
             steps {
                 echo '🧪 Running tests...'
                 // You can add Jest, Mocha, or Cypress tests here
-                sh 'echo "No tests configured yet."'
+                bat 'echo "No tests configured yet."'
             }
         }
 
         stage('Push to Docker Hub') {
             steps {
                 echo '🚀 Pushing Docker images to Docker Hub...'
-                sh """
+                bat """
                 echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin
                 docker compose push
                 """
@@ -42,7 +42,7 @@ pipeline {
         stage('Deploy Containers') {
             steps {
                 echo '⚡ Deploying containers...'
-                sh 'docker compose down && docker compose up -d'
+                bat 'docker compose down && docker compose up -d'
             }
         }
     }
