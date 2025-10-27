@@ -16,13 +16,14 @@ pipeline {
         }
 
         stage('Prepare Environment') {
-            steps {
-                echo '🧾 Creating .env file for backend...'
-                writeFile file: 'backend/.env', text: '''
+        steps {
+            echo '🧾 Creating .env file for backend...'
+            writeFile file: 'backend/.env', text: '''
         PORT=8080
         MONGO_URI=mongodb://mongo:27017/mycontacts-backend
         JWT_SECRET=uzair123
         '''
+                bat 'type backend\\.env'
             }
         }
 
