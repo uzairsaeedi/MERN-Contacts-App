@@ -15,6 +15,17 @@ pipeline {
             }
         }
 
+        stage('Prepare Environment') {
+            steps {
+                echo '🧾 Creating .env file for backend...'
+                writeFile file: 'backend/.env', text: '''
+        PORT=8080
+        MONGO_URI=mongodb://mongo:27017/contacts_db
+        JWT_SECRET=your_jwt_secret_here
+        '''
+            }
+        }
+
         stage('Build Docker Images') {
             steps {
                 echo '🐳 Building Docker images...'
