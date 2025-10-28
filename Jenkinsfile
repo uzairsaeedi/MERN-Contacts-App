@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+            githubPush()
+    }
+    
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
         DOCKERHUB_REPO = 'uzairsaeedi/my-contacts-app'
