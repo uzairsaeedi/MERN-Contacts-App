@@ -87,9 +87,9 @@ export default function Login() {
                     <h2 style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b' }}>
                         Welcome Back 👋
                     </h2>
-                    {/* <p style={{ fontSize: '15px', color: '#475569' }}>
+                    <p style={{ fontSize: '15px', color: '#475569' }}>
                         Sign in to continue
-                    </p> */}
+                    </p>
                 </div>
 
                 <form onSubmit={handle}>
