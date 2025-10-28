@@ -162,62 +162,9 @@ This project is configured to be deployed automatically when you push to `main` 
 
 4. Save.
 
-### D. Example `Jenkinsfile` (declarative pipeline)
+### D. `Jenkinsfile` (declarative pipeline)
 
-Place this `Jenkinsfile` at the repo root (it will be used by the pipeline job above). This file assumes Jenkins runs on the same host that runs Docker and Docker Compose.
-
-```groovy
-pipeline {
-  agent any
-
-  environment {
-    // adjust as needed
-    BACKEND_IMAGE = "contacts-backend"
-    FRONTEND_IMAGE = "contacts-frontend"
-    COMPOSE_FILE = "docker-compose.yml"
-  }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
-
-    stage('Build backend image') {
-      steps {
-        dir('backend') {
-          sh 'docker build -t ${BACKEND_IMAGE}:latest .' // tag with latest or use ${GIT_COMMIT}
-        }
-      }
-    }
-
-    stage('Build frontend image') {
-      steps {
-        dir('frontend') {
-          sh 'docker build -t ${FRONTEND_IMAGE}:latest .'
-        }
-      }
-    }
-
-    stage('Deploy (docker compose)') {
-      steps {
-        // ensure the compose file is in the workspace root, or adjust path
-        sh 'docker compose up -d --build'
-      }
-    }
-  }
-
-  post {
-    success {
-      echo 'Build & deploy succeeded.'
-    }
-    failure {
-      echo 'Build or deploy failed.'
-    }
-  }
-}
-```
+Place the `Jenkinsfile` at the repo root (it will be used by the pipeline job above). This file assumes Jenkins runs on the same host that runs Docker and Docker Compose.
 
 > Optional: To push images to Docker Hub instead of running compose locally, use `docker login` with Jenkins Docker credentials and `docker push` steps. Then update your `docker-compose.yml` to reference the pushed tags.
 
@@ -298,3 +245,4 @@ Then add that public URL in GitHub webhook settings. You can monitor the webhook
 ## 🏁 License
 
 This project is licensed under the **MIT License**.
+
