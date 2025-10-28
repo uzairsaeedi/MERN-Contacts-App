@@ -67,7 +67,6 @@ export default function Login() {
                     (e.currentTarget.style.boxShadow = '0 6px 30px rgba(0, 0, 0, 0.15)')
                 }
             >
-                {/* Header */}
                 <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                     <div
                         style={{
@@ -88,9 +87,9 @@ export default function Login() {
                     <h2 style={{ fontSize: '26px', fontWeight: '700', color: '#1e293b' }}>
                         Welcome Back 👋
                     </h2>
-                    <p style={{ fontSize: '15px', color: '#475569' }}>
+                    {/* <p style={{ fontSize: '15px', color: '#475569' }}>
                         Sign in to continue
-                    </p>
+                    </p> */}
                 </div>
 
                 <form onSubmit={handle}>
