@@ -26,7 +26,9 @@ export default function Login() {
             const user = userRes.data
             auth.login(token, expiryMs, user)
             toast.success('Logged in successfully!')
+            console.log('Navigating to home...')
             navigate('/')
+
         } catch (err) {
             toast.error(err?.response?.data?.message || 'Login failed')
         } finally {
